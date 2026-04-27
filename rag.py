@@ -1,6 +1,6 @@
 import os
 from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import FastEmbedEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
@@ -14,10 +14,9 @@ from langchain.chains import create_retrieval_chain, create_history_aware_retrie
 CHROMA_PATH = "./chroma_db"
 store = {}
 
-# Free cloud models — no GPU needed
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+# FastEmbed is tiny (~50MB) — perfect for free tier
+embeddings = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+
 llm = ChatGroq(
     model="llama-3.2-3b-preview",
     temperature=0.3,
