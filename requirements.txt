@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+langchain==0.3.25
+langchain-core==0.3.59
+langchain-community==0.3.23
+langchain-groq
+langchain-huggingface
+langchain-text-splitters
+sentence-transformers
+chromadb
+pypdf
+python-multipart
+huggingface-hub

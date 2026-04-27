@@ -1,0 +1,31 @@
+cat > .gitignore << 'EOF'
+# Virtual environment
+chatvenv/
+venv/
+env/
+chatbot/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ChromaDB
+chroma_db/
+
+# Uploaded docs
+docs/
+
+# Mac files
+.DS_Store
+
+# Large model files
+*.dylib
+*.so
+*.bin
+*.pt
+*.onnx
+EOF
